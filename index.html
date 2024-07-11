@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        p {
+         background-image: url(livra.jpg);
+        }
+        </style>
+
+
+<h1>livaria</h1>
+   
+
+
+    <h2>Livros</h2>
+    <div class="celula" >  
+        
+        <input type="button" value="Listar" class="custom-botton" onclick="window.open('list_books.php','self')">
+         <input type="button" value="Adicionar" class="custom-botton" onclick="window.open('add_book.php','self')"> <br><br><br>
+         
+         <h3> Area de Leitores</h3>  
+         <input type="button" value="Leitores" class="custom-botton" onclick="window.open('index_leitores.html','self')"> 
+       
+        <br><br><br><br>
+   
+
+ <input type="button" value="Registrar" class="custom-botton" onclick="window.open('registro.html','self')">
+
+
+<br><br><br><br>
+
+             Insira dados de Login
+  
+  
+       <form action="login.php" method="post">
+            <label for="nick">Nickname:</label>
+            <input type="text" id="nick" name="nick" required>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+            <input type="submit" value="Login">
+        </form>
+</div>
+
+
+</body>
+</html>

@@ -50,7 +50,7 @@ $result = $conn->query($sql);
 <td><?php echo $row['Email']; ?></td>
 <td>
 <a href="edit_leitor.php?id=<?php echo $row['Leitor_ID']; ?>">Editar</a>
-        <a href="delete_book.php?id=<?php echo $row['Leitor_ID']; ?>" onclick="return confirm('Tem certeza que deseja apagar este Leitor ?')">Apagar</a>
+        <a href="delete_leitor.php?id=<?php echo $row['Leitor_ID']; ?>" onclick="return confirm('Tem certeza que deseja apagar este Leitor ?')">Apagar</a>
     </td>
 </tr>
 <?php endwhile; ?>

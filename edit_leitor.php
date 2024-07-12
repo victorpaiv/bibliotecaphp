@@ -1,18 +1,18 @@
 <?php
 include 'config.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $nome1 = $_POST['nome1'];
-        $nome2 = $_POST['nome2'];
-        $data_aniver = $_POST['data_aniver'];
-        $morada = $_POST['morada'];
-        $telemovel = $_POST['telemovel'];
-        $email = $_POST['email'];
-        
-        $sql = "INSERT INTO leitor (Primeiro_nome, Ultimo_nome, Data_Aniversario, Morada, Telemovel, Email) VALUES ('$nome1', '$nome2',
-        '$data_aniver','$morada', '$telemovel','$email')";
-        if ($conn->query($sql) === TRUE) {
-        echo "Leitor adicionado com sucesso!";
-
+$leitor_id = $_POST['leitor_id'];
+$nome1 = $_POST['nome1'];
+$nome2 = $_POST['nome2'];
+$data_aniver = $_POST['data_aniver'];
+$morada= $_POST['morada'];
+$telemovel= $_POST['telemovel'];
+$email= $_POST['email'];
+$sql = "UPDATE leitor SET Primeiro_nome='$nome1', Ultimo_nome='$nome2', Data_Aniversario='$data_aniver',
+Morada='$morada', Telemovel='$telemovel', Email='$email' WHERE Leitor_ID=$leitor_id";
+if ($conn->query($sql) === TRUE) {
+echo "leitor atualizado com sucesso!";
+header('Location: list_leitor.php');
 } else {
 echo "Erro: " . $sql . "<br>" . $conn->error;
 }
@@ -31,6 +31,7 @@ $conn->close();
 </head>
 <body>
 <form method="POST" action="">
+<input type="hidden" name="leitor_id" value="<?php echo $leitor['Leitor_ID']; ?>">
     <label>Primeiro nome: </label> <br>
     <input type="text" name="nome1"  value="<?php echo $leitor['Primeiro_nome']; ?>" required><br>
     <label>Ultimo nome: </label><br>

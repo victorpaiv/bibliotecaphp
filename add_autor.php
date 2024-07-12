@@ -4,15 +4,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $nome1 = $_POST['nome1'];
 $nome2 = $_POST['nome2'];
 $data_aniver = $_POST['data_aniver'];
-$morada = $_POST['morada'];
-$telemovel = $_POST['telemovel'];
-$email = $_POST['email'];
 
-$sql = "INSERT INTO leitor (Primeiro_nome, Ultimo_nome, Data_Aniversario, Morada, Telemovel, Email) VALUES ('$nome1', '$nome2',
-'$data_aniver','$morada', '$telemovel','$email')";
+
+$sql = "INSERT INTO autor (Primeiro_Nome, Ultimo_Nome, Data_Aniversario) VALUES ('$nome1', '$nome2',
+'$data_aniver')";
 if ($conn->query($sql) === TRUE) {
-echo "Leitor adicionado com sucesso!";
-header('Location: list_leitor.php');
+echo "Autor adicionado com sucesso!";
+header('Location: list_autor.php');
 } else {
     echo "Erro: " . $sql . "<br>" . $conn->error;
     }
@@ -33,17 +31,12 @@ header('Location: list_leitor.php');
     <input type="text" name="nome2" required><br>
     <label>Data de Nascimento:</label><br>
     <input type="date" name="data_aniver"><br>
-    <label>Morada:</label><br>
-    <input type="text" name="morada"><br>
-    <label>telemovel:</label><br>
-    <input type="text" name="telemovel" ><br>
-    <label>Email:</label><br>
-    <input type="text" name="email" ><br><br>
+ 
     <input type="submit" value="Adicionar">
     </form>
     <br><br><br><br><br>
 <div class="celula" >  
-<input type="button" value=" lista de Leitores" class="custom-botton" onclick="window.open('list_leitor.php','self')"> <br><br><br>
+<input type="button" value=" lista de Leitores" class="custom-botton" onclick="window.open('list_autor.php','self')"> <br><br><br>
 
 <input type="button" value="Voltar ao menu" class="custom-botton" onclick="window.open('index.html','self')"> 
 
@@ -52,5 +45,3 @@ header('Location: list_leitor.php');
     </html>
     
 
-
-	

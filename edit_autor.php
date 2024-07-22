@@ -36,7 +36,7 @@ $conn->close();
     <label>Data de Nascimento:</label><br>
     <input type="date" name="data_aniver" value="<?php echo $autor['Data_Aniversario']; ?>"><br>
 
-    <input type="submit" value="Adicionar">
+    <input type="submit" value="Alterar">
     </form>
 <br><br><br><br><br>
 <div class="celula" >  

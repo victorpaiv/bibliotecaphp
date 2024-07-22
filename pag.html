@@ -1,0 +1,51 @@
+<?php
+session_start();
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="login2.css" media="screen" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <?php
+    echo "<h1> Compra e venda </h1>";
+    ?>
+    <input style="margin-left:350px;" title="Editar perfil" type="button" value="?" onclick="window.open('perfil.php','_self')" class="custom-button">
+    <input type="button" value="X" title="Logout" onclick="window.open('logout.php','_self')" class="custom-button">
+    <br><br>
+    <form action="vender.php" method="post">
+        <input type="hidden" name="categoria" value="1">
+        <input type="submit" value="Vender" class="custom-button">
+    </form>
+    <form action="comprar.php" method="post">
+        <input type="hidden" name="categoria" value="0">
+        <input type="submit" value="Comprar" class="custom-button">
+    </form>
+    <form action="pesq.php" method="post">
+        <input type="hidden" name="categoria" value="0">
+        <input type="submit" value="Pesquisar" class="custom-button">
+    </form>
+    <form action="historico.php" method="post">
+        <input type="hidden" name="tipo" value="0">
+        <input type="submit" value="Histórico" class="custom-button">
+    </form>
+    <?php
+    if (strcmp($_SESSION['nick'], "admin") == 0) {
+        echo '<div class="admin-section">';
+        echo '<h2>Área de Administração</h2>';
+        echo '<input type="button" value="Gerir Utilizadores" onclick="window.open(\'listar.php\',\'_self\')" class="custom-button">';
+        echo '<input type="button" value="Pesquisar Utilizadores" onclick="window.open(\'pesquisar_U.php\',\'_self\')" class="custom-button">';
+        echo '<input type="button" value="Gerir Produtos" onclick="window.open(\'gerir_P.php\',\'_self\')" class="custom-button">';
+        echo '<input type="button" value="Gerir Categorias" onclick="window.open(\'gerir_C.php\',\'_self\')" class="custom-button">';
+        echo '</div>';
+    }
+    ?>
+</body>
+</html>

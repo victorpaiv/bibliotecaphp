@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url("img/store.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.custom-button {
+    background-color:#f2f5f7;
+    color:#00BFFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color:#e7e7e7e0;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="button"], input[type="submit"] {
+align-items: right;
+
+}
+
+h2 {
+    text-align: center;
+    color: #555;
+}
+
+.admin-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.admin-section h2 {
+    color: 	#030303;
+}
+
+.admin-section .custom-button {
+    background-color:#00BFFF;
+}
+
+.admin-section .custom-button:hover {
+    background-color: #c82333;
+}
+
+

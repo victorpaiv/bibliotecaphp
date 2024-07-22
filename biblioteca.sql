@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Jul-2024 às 20:17
+-- Tempo de geração: 22-Jul-2024 às 20:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -40,8 +40,7 @@ CREATE TABLE `autor` (
 
 INSERT INTO `autor` (`Autor_ID`, `Primeiro_Nome`, `Ultimo_Nome`, `Data_Aniversario`) VALUES
 (3, 'victor', 'paiva', '2024-07-17'),
-(4, 'zefff', 'nunes', '2024-07-09'),
-(5, 'naosei', 'paiva', '2024-07-01');
+(4, 'zefff', 'nunes', '2024-07-09');
 
 -- --------------------------------------------------------
 
@@ -55,8 +54,19 @@ CREATE TABLE `emprestimo` (
   `Leitor_ID` int(11) DEFAULT NULL,
   `Data_Emp` date NOT NULL,
   `Data_Vencimento` date NOT NULL,
-  `Date_Entrega` date DEFAULT NULL
+  `Data_Entrega` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Extraindo dados da tabela `emprestimo`
+--
+
+INSERT INTO `emprestimo` (`Emprestimo_ID`, `Livro_ID`, `Leitor_ID`, `Data_Emp`, `Data_Vencimento`, `Data_Entrega`) VALUES
+(1, 3, 3, '2024-07-03', '2024-07-11', '2024-07-27'),
+(2, 3, 3, '2024-07-03', '2024-07-11', '2024-07-25'),
+(3, 3, 3, '2024-07-03', '2024-07-12', '2024-07-26'),
+(4, 7, 4, '2024-07-04', '2024-07-26', '2024-07-25'),
+(5, 4, 8, '2024-07-04', '2024-07-10', '2024-07-10');
 
 -- --------------------------------------------------------
 
@@ -80,8 +90,8 @@ CREATE TABLE `leitor` (
 
 INSERT INTO `leitor` (`Leitor_ID`, `Primeiro_nome`, `Ultimo_nome`, `Data_Aniversario`, `Morada`, `Telemovel`, `Email`) VALUES
 (3, 'felipe', 'putz', '2024-07-02', 'sdsd', 'sdsd', 'sdsd'),
-(4, 'testttt', 'fdfdfd', '2024-07-03', 'rererer', '6576767', 'bbbbb'),
-(5, 'teste', 'oi', '2024-07-03', 'sfdsaf', '343543', 'victor106.3@hotmail.com');
+(4, 'testtttvdvdv', 'fdfdfd', '2024-07-03', 'rererer', '6576767', 'bbbbb'),
+(8, 'teste', 'wwwe', '2024-07-02', 'aaaa', 'aaaa', 'aaaaa');
 
 -- --------------------------------------------------------
 
@@ -171,13 +181,13 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de tabela `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `Emprestimo_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Emprestimo_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `leitor`
 --
 ALTER TABLE `leitor`
-  MODIFY `Leitor_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Leitor_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `livro`
